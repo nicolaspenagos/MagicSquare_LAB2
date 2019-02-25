@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.MagicSquareController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutX="136.0" layoutY="97.0" prefHeight="303.0" prefWidth="467.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="226.0" />
+        </content>
+      </ScrollPane>
+      <ImageView fitHeight="84.0" fitWidth="600.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Title-01.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="335.0" fitWidth="245.0" layoutX="-9.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Background-01-01.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtF1" layoutX="46.0" layoutY="121.0" prefHeight="26.0" prefWidth="44.0" />
+      <ComboBox fx:id="comboBox1" layoutX="26.0" layoutY="209.0" prefHeight="26.0" prefWidth="90.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:id="Option1" fx:value="Up-center" />
+               <String fx:id="Option2" fx:value="Down-center" />
+               <String fx:id="Option3" fx:value="Left-center" />
+               <String fx:id="Option4" fx:value="Right-center" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <ComboBox fx:id="comboBox2" layoutX="23.0" layoutY="301.0" prefHeight="26.0" prefWidth="98.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:id="Option5" fx:value="NW" />
+               <String fx:id="Option6" fx:value="NE" />
+               <String fx:id="Option7" fx:value="SE" />
+               <String fx:id="Option9" fx:value="SW" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Button layoutX="35.0" layoutY="357.0" mnemonicParsing="false" onAction="#solveButton" prefHeight="26.0" prefWidth="64.0" text="Solve">
+         <effect>
+            <InnerShadow color="#0084ff" />
+         </effect>
+      </Button>
+      <Label fx:id="lbResult" layoutX="151.0" layoutY="72.0" prefHeight="20.0" prefWidth="444.0" textFill="#da0d92">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="82.0" text="Please enter the size " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="96.0" text="(n) of the square: " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="173.0" text="Where do you want" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="188.0" text="to start?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="264.0" text="Please choose the" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="279.0" text="orientation:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbMC" layoutX="391.0" layoutY="72.0" prefHeight="20.0" prefWidth="193.0" textFill="#da0d92">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
