@@ -8,6 +8,10 @@
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.Test;
+
+import customExceptions.InvalidNegativeOrderMagicSquareException;
+import customExceptions.PairMagicSquareException;
+
 import java.util.Arrays;
 import javafx.scene.control.Button;
 import model.MagicSquare;
@@ -163,7 +167,7 @@ class MagicSquareTest{
 	void testChecker() {
 		
 		setUpScenary2();
-		
+		try {
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker("xxx",MagicSquare.SE)==0);
 		
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.UC,MagicSquare.NO)==1);
@@ -181,6 +185,11 @@ class MagicSquareTest{
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.RC,MagicSquare.NE)==7);
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.RC,MagicSquare.SE)==8);
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.RC,"xxx")==10000);
+		}catch(PairMagicSquareException e) {
+    		System.out.println(""+e.getMessage());
+    	}catch(InvalidNegativeOrderMagicSquareException e) {
+    		System.out.println(""+e.getMessage());
+    	}
 		
 		
 	}
@@ -191,6 +200,7 @@ class MagicSquareTest{
 	@Test
 	void testCheker1() {
 		setUpScenary5();
+		try {
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.UC,MagicSquare.NO)==1000000);
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.UC,MagicSquare.NE)==1000000);
 		
@@ -202,6 +212,11 @@ class MagicSquareTest{
 		
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.RC,MagicSquare.NE)==1000000);
 		assertTrue("The method checker is returning the wrong option", newMagicSquare.checker(MagicSquare.RC,MagicSquare.SE)==1000000);
+		}catch(PairMagicSquareException e) {
+    		System.out.println(""+e.getMessage());
+    	}catch(InvalidNegativeOrderMagicSquareException e) {
+    		System.out.println(""+e.getMessage());
+    	}
 	}
 	
 	/**
@@ -243,7 +258,7 @@ class MagicSquareTest{
 	void testFillMatrixUCNO3() {
 		setUpScenary2();
 		int[][] expected = {{6,1,8},{7,5,3},{2,9,4}};
-		int[][] obtained = newMagicSquare.fillMatrixUCNO();;
+		int[][] obtained = newMagicSquare.fillMatrixUCNO();
 		
 		assertTrue("The result of the solved matrix for 3x3 UP CENTER NORTH-WEST matrix is incorrect", Arrays.deepEquals(expected, obtained));
 		
@@ -256,7 +271,7 @@ class MagicSquareTest{
 	void testFillMatrixUCNO5() {
 		setUpScenary3();
 		int[][] expected = {{15,8,1,24,17},{16,14,7,5,23},{22,20,13,6,4},{3,21,19,12,10},{9,2,25,18,11}};
-		int[][] obtained = newMagicSquare.fillMatrixUCNO();;
+		int[][] obtained = newMagicSquare.fillMatrixUCNO();
 		
 		assertTrue("The result of the solved matrix for 5x5 UP CENTER NORTH-WEST matrix is incorrect", Arrays.deepEquals(expected, obtained));
 		

@@ -8,6 +8,8 @@
 
 package model;
 
+import customExceptions.InvalidNegativeOrderMagicSquareException;
+import customExceptions.PairMagicSquareException;
 import javafx.scene.control.Button;
 
 /**
@@ -95,12 +97,12 @@ public class MagicSquare {
      * post: A MagicSquare object is instantiate. 
      * post: A buttons matrix is instantiate. 
      */
-	public MagicSquare(int nx) {
-		n = nx; 
-		matrix= new int[n][n];
-		magicConstant=n*((n*n)+1)/2;
-		option=0; 
-		buttons=new Button[nx][nx];
+	public MagicSquare(int nx) throws NegativeArraySizeException{
+			n = nx; 
+			matrix= new int[n][n];
+			magicConstant=n*((n*n)+1)/2;
+			option=0; 
+			buttons=new Button[nx][nx];
 	}
 	
 	//-------------------------------------
@@ -159,12 +161,16 @@ public class MagicSquare {
 	 * @param startPosition It is the start position of the magicSquare.
 	 * @param orientation It is the orientantion of how the magicSquare will be filled.
      * @return int The option of the magicSquare.
+	 * @throws PairMagicSquareException 
      */
-	public int checker(String startPosition, String orientation) {
+	public int checker(String startPosition, String orientation) throws PairMagicSquareException,InvalidNegativeOrderMagicSquareException  {
 
-		if((n%2==0)||!(n>2)){
-			option=1000000; 
-		}else {
+		
+			if(n%2==0) {
+				throw new PairMagicSquareException();
+			}else if(n<0) {
+				throw new InvalidNegativeOrderMagicSquareException(n);
+			} else {
 			if(startPosition.equalsIgnoreCase(UC)) {
 				if(orientation.equalsIgnoreCase(NO)) {
 					option = 1; 
@@ -212,7 +218,7 @@ public class MagicSquare {
 	public String message() {
 		String msg="You can not use Up-center with that orientation";
 		if(option==1000000) {
-			msg= "Error, (n) cannot to be pair nor one ";
+			msg= "Error, (n) cannot to be pair nor one nor negative";
 		}
 
 
