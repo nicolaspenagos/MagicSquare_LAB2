@@ -225,8 +225,6 @@ class MagicSquareTest{
 	@Test
 	void testMessage() {
 		setUpScenary2();
-		newMagicSquare.setO(1000000);
-		assertTrue("The method is returning the wrong message", newMagicSquare.message().equals("Error, (n) cannot to be pair nor one "));
 		newMagicSquare.setO(1);
 		assertTrue("The method is returning the wrong message", newMagicSquare.message().equals("The solution:"));
 		newMagicSquare.setO(2);

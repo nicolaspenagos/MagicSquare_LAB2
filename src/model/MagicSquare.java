@@ -97,7 +97,7 @@ public class MagicSquare {
      * post: A MagicSquare object is instantiate. 
      * post: A buttons matrix is instantiate. 
      */
-	public MagicSquare(int nx) throws NegativeArraySizeException{
+	public MagicSquare(int nx){
 			n = nx; 
 			matrix= new int[n][n];
 			magicConstant=n*((n*n)+1)/2;
@@ -214,6 +214,11 @@ public class MagicSquare {
 
 		return option; 
 	}
+	
+	/** The method show the options .
+	 * pre: O.
+     * @return String The a message to be showed on the screen.
+     */
 
 	public String message() {
 		String msg="You can not use Up-center with that orientation";
