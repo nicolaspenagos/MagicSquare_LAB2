@@ -1,3 +1,4 @@
+package modelTest;
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Universidad Icesi (Cali-Colombia)
 * Algoritmos y porgramcion II
@@ -5,6 +6,7 @@
 * Java SE Development Kit 8 Update 121
 **~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -189,9 +191,7 @@ class MagicSquareTest{
     		System.out.println(""+e.getMessage());
     	}catch(InvalidNegativeOrderMagicSquareException e) {
     		System.out.println(""+e.getMessage());
-    	}
-		
-		
+    	}	
 	}
 	
 	/**

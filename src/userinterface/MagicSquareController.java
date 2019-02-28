@@ -18,7 +18,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-
 import customExceptions.InvalidNegativeOrderMagicSquareException;
 import customExceptions.PairMagicSquareException;
 import javafx.event.ActionEvent;
@@ -83,6 +82,7 @@ public class MagicSquareController {
     @FXML
     void solveButton(ActionEvent event) {
 	    	try {
+	    	lbMC.setText("");
 	    	GridPane grid2=new GridPane();
 	    	grid=grid2;
 	    	scrollPane.setContent(grid1);
@@ -161,8 +161,7 @@ public class MagicSquareController {
     	}catch(NegativeArraySizeException e){
     		lbResult.setText("Can't create array of negative size "+e.getMessage());
        	}catch(NullPointerException e) {
-       		lbResult.setText("NullPointerException caught ,"+e.getMessage());
-    		
+       		lbResult.setText("NullPointerException caught ,"+e.getMessage());	
     	}catch(NumberFormatException e) {
     		lbResult.setText("Number format exception caught,"+e.getMessage());
     	}catch(Exception e) {

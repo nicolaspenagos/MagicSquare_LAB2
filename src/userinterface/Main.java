@@ -32,11 +32,15 @@ public class Main extends Application{
 	*/
 	@Override
 	public void start(Stage stage) throws Exception {
+		try {
 		Parent root = FXMLLoader.load(getClass().getResource("MagicSquare3.fxml"));
 		Scene scene = new Scene(root); 
 		stage.setTitle("MagicSquare");
 		stage.setScene(scene);
 		stage.show(); 
+		}catch(NullPointerException e){
+			System.out.print("The fxml file does not exit");
+		}
 		
 	}
 
