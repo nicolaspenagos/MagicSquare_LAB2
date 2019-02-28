@@ -20,6 +20,7 @@ public class InvalidNegativeOrderMagicSquareException extends Exception{
 	
 	/**
    	* This method allows to instantiate InvalidNegativeOrderMagicSquareException
+   	* @param x Is the number of the magicSquare
     */
 	public InvalidNegativeOrderMagicSquareException(int x) {
 		super(x+"is a negative number and cannot be an order of a magicSquare");

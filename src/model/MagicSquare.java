@@ -148,6 +148,7 @@ public class MagicSquare {
 	//-------------------------------------
 	
 	/** The method allows to set the option.
+	 * @param x Is the new value tha will be entered.
      */
 	public void setO(int x) {
 		option=x;
